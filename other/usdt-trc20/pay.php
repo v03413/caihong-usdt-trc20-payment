@@ -1,6 +1,7 @@
 <?php
-require 'inc.php';
-require_once SYSTEM_ROOT . 'usdt-trc20/inc.php';
+
+require '../inc.php';
+require './inc.php';
 
 @header('Content-Type: text/html; charset=UTF-8');
 $trade_no = daddslashes($_GET['trade_no']);
@@ -8,7 +9,7 @@ $type     = daddslashes($_GET['type']);
 if (!is_numeric($trade_no)) {
     exit('订单号不符合要求!');
 }
-if ($conf['alipay_api'] != 5 && $conf['qqpay_api'] != 5 && $conf['wxpay_api'] != 5) {
+if (empty($conf['codepay_key'])) {
     exit('当前支付接口未开启');
 }
 $row = $DB->getRow("SELECT * FROM pre_pay WHERE trade_no='{$trade_no}' LIMIT 1");

@@ -114,7 +114,7 @@ if ($islogin2 == 1) {
 
     $(document).ready(function () {
         $("#buy_usdt").click(function () {
-            dopay('alipay')
+            dopay('usdt_pay')
         });
         $("#buy_alipay").click(function () {
             dopay('alipay')

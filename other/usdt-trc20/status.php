@@ -2,7 +2,6 @@
 require '../inc.php';
 require './inc.php';
 
-
 checkResult();
 
 $trade_no = isset($_GET['trade_no']) ? daddslashes($_GET['trade_no']) : exit('No trade_no!');
@@ -13,7 +12,7 @@ $row = $DB->getRow("SELECT * FROM pre_pay WHERE trade_no='{$trade_no}' LIMIT 1")
 if ($row['domain'] && $row['domain'] != $_SERVER['HTTP_HOST'] && strpos($row['domain'], '.') !== false) {
     $baseurl = 'http://' . $row['domain'] . '/';
 } else {
-    $baseurl = '../';
+    $baseurl = '/';
 }
 if ($row['tid'] == -1) $link = $baseurl . 'user/';
 elseif ($row['tid'] == -2) $link = $baseurl . 'user/regok.php?orderid=' . $trade_no;

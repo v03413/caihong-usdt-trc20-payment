@@ -9,17 +9,17 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <link rel="shortcut icon" href="./usdt-trc20/static/img/tether.svg"/>
+    <link rel="shortcut icon" href="./static/img/tether.svg"/>
     <title>
         USDT 在线收银台
     </title>
-    <link href="./usdt-trc20/static/css/main.min.css" rel="stylesheet"/>
+    <link href="./static/css/main.min.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container">
     <div class="header">
         <div class="icon">
-            <img class="logo" src="./usdt-trc20/static/img/tether.svg" alt="logo">
+            <img class="logo" src="./static/img/tether.svg" alt="logo">
         </div>
         <h1>
             <?= $_SERVER['HTTP_HOST']; ?>
@@ -40,7 +40,7 @@
             </div>
             <div class="main">
                 <img class="qrcode"
-                     src="./usdt-trc20/static/qrcode/index.php?c=<?= $USDT_ADDRESS; ?>"
+                     src="./static/qrcode/index.php?c=<?= $USDT_ADDRESS; ?>"
                      alt="qrcode">
             </div>
 
@@ -65,12 +65,12 @@
         </div>
     </div>
     <div class="footer">
-        <p>Powered by <a href="https://qzone.work" target="_blank">Qzone.Work</a></p>
+        <p>Powered by <a href="https://qzone.work/codes/668.html" target="_blank">Qzone.Work</a></p>
     </div>
 </div>
-<script src="./usdt-trc20/static/js/jquery.min.js"></script>
+<script src="./static/js/jquery.min.js"></script>
 <script src="//lib.baomitu.com/layer/3.1.1/layer.js"></script>
-<script src="./usdt-trc20/static/js/clipboard.min.js"></script>
+<script src="./static/js/clipboard.min.js"></script>
 <script>
     $(function () {
         (new Clipboard('#usdt')).on('success', function (e) {
@@ -109,9 +109,9 @@
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: "./usdt-trc20/status.php",
+            url: "./status.php",
             timeout: 10000, //ajax请求超时时间10s
-            data: {type: "<?=$_GET['type'];?>", trade_no: "<?php echo $row['trade_no']?>"}, //post数据
+            data: {trade_no: "<?php echo $row['trade_no']?>"}, //post数据
             success: function (data, textStatus) {
                 //从服务器得到数据，显示数据并继续查询
                 if (data.code == 1) {

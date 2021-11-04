@@ -1,6 +1,4 @@
 <?php
-const usdt_version = 1.0;
-
 $USDT_ADDRESS = trim($conf['codepay_key']);
 [$USDT_VALID_TIME, $USDT_RATE] = explode('|', $conf['codepay_id']);
 
@@ -21,7 +19,7 @@ function checkResult(bool $output = false)
 
     $date = date('Y-m-d H:i:s');
     $add  = date('Y-m-d H:i:s', time() - $USDT_VALID_TIME);
-    $rows = $DB->query("select * from pre_pay where status = 0 and channel = 'codepay' and addtime >='$add'");
+    $rows = $DB->query("select * from pre_pay where status = 0 and channel = 'usdtpay' and addtime >='$add'");
     while ($row = $rows->fetch(PDO::FETCH_ASSOC)) {
         foreach ($list as $item) {
             $lock = sys_get_temp_dir() . '/usdt-trc20_pay_' . $row['trade_no'] . '.dat';

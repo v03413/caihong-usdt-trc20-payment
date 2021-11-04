@@ -37,14 +37,12 @@ if ($islogin2 == 1) {
                 <hr>
                 <input type="text" class="form-control" name="value" autocomplete="off" placeholder="输入要充值的余额"><br>
                 <?php
-                if ($conf['codepay_key']) {
-                    echo '<button type="submit" class="btn btn-default" id="buy_usdt"><img src="../other/usdt-trc20/static/img/tether.svg" class="logo">USDT - TRC20</button>&nbsp;';
-                } else {
-                    if ($conf['alipay_api']) echo '<button type="submit" class="btn btn-default" id="buy_alipay"><img src="../assets/img/alipay.png" class="logo">支付宝</button>&nbsp;';
-                    if ($conf['qqpay_api']) echo '<button type="submit" class="btn btn-default" id="buy_qqpay"><img src="../assets/img/qqpay.png" class="logo">QQ钱包</button>&nbsp;';
-                    if ($conf['wxpay_api']) echo '<button type="submit" class="btn btn-default" id="buy_wxpay"><img src="../assets/img/wxpay.png" class="logo">微信支付</button>&nbsp;';
+                if ($conf['codepay_key']) echo '<button type="submit" class="btn btn-default" id="buy_usdt"><img src="../other/usdt-trc20/static/img/tether.svg" class="logo">USDT - TRC20</button>&nbsp;';
+                if ($conf['alipay_api']) echo '<button type="submit" class="btn btn-default" id="buy_alipay"><img src="../assets/img/alipay.png" class="logo">支付宝</button>&nbsp;';
+                if ($conf['qqpay_api']) echo '<button type="submit" class="btn btn-default" id="buy_qqpay"><img src="../assets/img/qqpay.png" class="logo">QQ钱包</button>&nbsp;';
+                if ($conf['wxpay_api']) echo '<button type="submit" class="btn btn-default" id="buy_wxpay"><img src="../assets/img/wxpay.png" class="logo">微信支付</button>&nbsp;';
 
-                } ?>
+                ?>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModa4" id="alink"
                         style="visibility: hidden;"></button>
                 <hr>

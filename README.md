@@ -1,2 +1,3 @@
-# caihong-usdt-trc20-payment
-彩虹云商城 usdt-trc20 充值通道
+## 使用教程
+
+https://qzone.work/codes/668.html  

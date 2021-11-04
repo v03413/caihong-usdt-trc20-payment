@@ -1,4 +1,6 @@
 <?php
+const usdt_version = 1.0;
+
 $USDT_ADDRESS = trim($conf['codepay_key']);
 [$USDT_VALID_TIME, $USDT_RATE] = explode('|', $conf['codepay_id']);
 

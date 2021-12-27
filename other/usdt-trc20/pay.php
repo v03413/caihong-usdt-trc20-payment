@@ -23,12 +23,12 @@ if (file_exists($lock)) {
     $usdt = file_get_contents($lock);
 } else {
     $rate    = getLatestRate();
-    $usdt    = round($row['money'] / $rate, 4);
+    $usdt    = round($row['money'] / $rate, 2);
     $addTime = date('Y-m-d H:i:s', strtotime($row['addtime']) - $USDT_VALID_TIME);
     $exist   = $DB->getRow("select * from pre_pay where type = 'usdt_pay' and trade_no != '{$row['trade_no']}' and money = '{$row['money']}' and status = 0 and addtime >= '$addTime' order by trade_no desc limit 1");
     if ($exist) {
         $dat  = sys_get_temp_dir() . '/usdt-trc20_pay_' . $exist['trade_no'] . '.dat';
-        $usdt = bcadd(file_get_contents($dat), 0.0001, 4);
+        $usdt = bcadd(file_get_contents($dat), 0.01, 2);
     }
 
     file_put_contents($lock, $usdt);
